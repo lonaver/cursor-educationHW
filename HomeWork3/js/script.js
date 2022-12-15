@@ -107,9 +107,9 @@ convertCurrency = (sum) => {
 
 // Task8
 const lenPassword = Number(prompt("Enter length password: "));
-randomPassword = (lengthPassword = 8) => {
+randomPassword = (lengthPassword) => {
   let password = "";
-  if (lengthPassword == 0) lengthPassword = 8;
+  lengthPassword = lengthPassword || 8;
   for (let i = 1; i <= lengthPassword; i++) {
     const RandomNumber = Math.random();
     const numberPassword = Math.floor((9 - 0) * RandomNumber + 0);
