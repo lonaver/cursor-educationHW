@@ -106,7 +106,7 @@ convertCurrency = (sum) => {
 };
 
 // Task8
-const lenPassword = Number(prompt("Enter length password: "));
+const lenPassword = Number(prompt("Enter length password: ", 8));
 randomPassword = (lengthPassword) => {
   let password = "";
   lengthPassword = lengthPassword || 8;
