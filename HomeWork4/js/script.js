@@ -49,16 +49,16 @@ const arrayMarkForStudednts = MarksForStudents(students, marks);
 
 //get randon mark for student within 1-5 range
 GetMarksCommand = (arrayCommandWithTheme) => {
-  const ArrayCommandThemeMark = [...arrayCommandWithTheme];
+  const CopyArray = JSON.parse(JSON.stringify(arrayCommandWithTheme));
   const max = 5;
   const min = 1;
-
-  for (let i = 0; i < arrayCommandWithTheme.length; i++) {
+  debugger;
+  for (let i = 0; i < CopyArray.length; i++) {
     let RandomNumber = Math.random();
     let randomMark = Math.floor((max - min) * RandomNumber + min);
-    ArrayCommandThemeMark[i].push(randomMark);
+    CopyArray[i].push(randomMark);
   }
-  return ArrayCommandThemeMark;
+  return CopyArray;
 };
 const arrayCommandMark = GetMarksCommand(arrayCommandWithTheme);
 
