@@ -1,11 +1,21 @@
 let newNumber = Number(prompt("Enter a number: "));
 
 while (newNumber !== Math.floor(newNumber)) {
-  newNumber = Number(prompt("number must be integer: "));
+  newNumber = Number(prompt("number must be integer and positive: "));
+}
+while (newNumber < 0) {
+  newNumber = Number(prompt("number must be integer and positive: "));
 }
 let newNumberAn = Number(prompt("Enter another number: "));
 while (newNumberAn !== Math.floor(newNumberAn)) {
-  newNumberAn = Number(prompt("number 'another' must be integer: "));
+  newNumberAn = Number(
+    prompt("number 'another' must be integer and positive: ")
+  );
+}
+while (newNumberAn < 0) {
+  newNumberAn = Number(
+    prompt("number 'another' must be integer and positive: ")
+  );
 }
 
 const needEven = confirm("Does it skip even numbers?");
@@ -27,4 +37,4 @@ if (newNumber <= newNumberAn) {
     }
   }
 }
-console.log(sum);
+console.log(`Sum ${sum}`);
