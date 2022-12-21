@@ -1,40 +1,20 @@
-let newNumber = Number(prompt("Enter a number: "));
-
-while (newNumber !== Math.floor(newNumber)) {
-  newNumber = Number(prompt("number must be integer and positive: "));
-}
-while (newNumber < 0) {
-  newNumber = Number(prompt("number must be integer and positive: "));
-}
-let newNumberAn = Number(prompt("Enter another number: "));
-while (newNumberAn !== Math.floor(newNumberAn)) {
-  newNumberAn = Number(
-    prompt("number 'another' must be integer and positive: ")
-  );
-}
-while (newNumberAn < 0) {
-  newNumberAn = Number(
-    prompt("number 'another' must be integer and positive: ")
-  );
-}
-
+let newNumber;
+let newNumberAn;
+do {
+  do {
+    newNumber = Number(prompt("min number must be integer and positive: "));
+  } while (newNumber < 0 && newNumber !== Math.floor(newNumber));
+  do {
+    newNumberAn = Number(prompt("max number must be integer and positive: "));
+  } while (newNumberAn !== Math.floor(newNumberAn) && newNumberAn < 0);
+} while (newNumber > newNumberAn);
 const needEven = confirm("Does it skip even numbers?");
 let sum = 0;
-if (newNumber <= newNumberAn) {
-  for (let i = newNumber; i <= newNumberAn; i++) {
-    if (needEven == true && i % 2 == 0) {
-      sum += i;
-    } else if (needEven == false && i % 2 !== 0) {
-      sum += i;
-    }
-  }
-} else {
-  for (let i = newNumberAn; i <= newNumber; i++) {
-    if (needEven == true && i % 2 == 0) {
-      sum += i;
-    } else if (needEven == false && i % 2 !== 0) {
-      sum += i;
-    }
+for (let i = newNumber; i <= newNumberAn; i++) {
+  if (needEven == true && i % 2 == 0) {
+    sum += i;
+  } else if (needEven == false && i % 2 !== 0) {
+    sum += i;
   }
 }
 console.log(`Sum ${sum}`);
