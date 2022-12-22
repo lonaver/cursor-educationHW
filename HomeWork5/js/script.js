@@ -27,9 +27,6 @@ const arrayModa = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 // const arrayModaStr = prompt("Task 2: Enter array: ");
 // const arrayModa = [1.1, 2, 1.1];
 getModa = (arrayModa) => {
-  // const arrayModa = arrayModaStr.splice();
-  // arrayModa.map((element) => Number(element));
-
   const arrayCouple = [];
   arrayModa.sort((a, b) => a - b);
   for (let i = 0; i < arrayModa.length; i++) {
