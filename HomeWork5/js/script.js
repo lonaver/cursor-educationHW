@@ -1,4 +1,4 @@
-Task 1
+//Task 1
 const lengthArray = Number(prompt("Task 1: Enter a length array: "));
 const minNumber = Number(prompt("Task 1: Enter a min number: "));
 const maxNumber = Number(prompt("Task 1: Enter a max number: "));
