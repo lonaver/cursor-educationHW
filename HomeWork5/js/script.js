@@ -12,7 +12,6 @@ getRandomArray = (length, min, max) => {
     isNaN(min)
   )
     return;
-  debugger;
   length = Math.floor(length);
 
   do {
@@ -23,11 +22,17 @@ getRandomArray = (length, min, max) => {
 console.log(`Task1: ${getRandomArray(lengthArray, minNumber, maxNumber)}`);
 
 // Task 2
-const arrayModa = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
-// const arrayModaStr = prompt("Task 2: Enter array: ");
+//const arrayModa = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 // const arrayModa = [1.1, 2, 1.1];
-getModa = (arrayModa) => {
+const arrayModaStr = prompt("Task 2: Enter array for Moda: ");
+getModa = (arrayModaStr) => {
+  const arrayForStart = arrayModaStr.split(" ");
   const arrayCouple = [];
+  const arrayModa = [];
+  arrayForStart.forEach((element) => {
+    if (Number(element)) arrayModa.push(Number(element));
+  });
+
   arrayModa.sort((a, b) => a - b);
   for (let i = 0; i < arrayModa.length; i++) {
     if (!Number.isInteger(arrayModa[i])) continue;
@@ -42,15 +47,22 @@ getModa = (arrayModa) => {
   const max = arrayCouple[0][0];
   return max;
 };
-console.log(`Task2 : ${getModa(arrayModa)}`);
+console.log(`Task2 : ${getModa(arrayModaStr)}`);
 
 //Task 3
-const arrayForAverage = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
+const numbersForAverage = prompt("Task 3: Enter array for avarege: ");
+// const arrayForAverage = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 // const arrayForAverage = [1.1, 2.2, 1.1];
-getAverage = (arrayForAverage) => {
+getAverage = (numbersForAverage) => {
+  const arrayForStart = numbersForAverage.split(" ");
   let avg;
   let sum = 0;
   let count = 0;
+  const arrayForAverage = [];
+  arrayForStart.forEach((element) => {
+    if (Number(element)) arrayForAverage.push(Number(element));
+  });
+
   arrayForAverage.forEach((element) => {
     if (Number.isInteger(element) && Number.isInteger(element)) {
       sum += element;
@@ -61,15 +73,22 @@ getAverage = (arrayForAverage) => {
   avg = sum / (count || 1);
   return avg;
 };
-console.log(`Task3: ${getAverage(arrayForAverage)}`);
+console.log(`Task3: ${getAverage(numbersForAverage)}`);
 
 //getMedian(1, 2, 3, 4) –> 2.5
 //Task 4
 // const arrayForMedian = [1, 2, 3, 4];
 // const arrayForMedian = [1, 2, 3, 4, 5];
-const arrayForMedian = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
-getMedian = (arrayForMedian) => {
+// const arrayForMedian = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
+const numbersForMedian = prompt("Task 4: Enter array for median: ");
+
+getMedian = (numbersForMedian) => {
+  const arrayForStart = numbersForMedian.split(" ");
   let median;
+  const arrayForMedian = [];
+  arrayForStart.forEach((element) => {
+    if (Number(element)) arrayForMedian.push(Number(element));
+  });
   let arraySorted = arrayForMedian
     .sort((a, b) => a - b)
     .filter((element) => (element = Number.isInteger(element)));
@@ -82,33 +101,58 @@ getMedian = (arrayForMedian) => {
   }
   return median;
 };
-console.log(`Task4: ${getMedian(arrayForMedian)}`);
+console.log(`Task4: ${getMedian(numbersForMedian)}`);
 
 //Task 5
-const arrayEvenNumbers = [1, 2, 3, 4, 5, 6];
-filterEvenNumbers = (arrayEvenNumbers) => {
+// const arrayEvenNumbers = [1, 2, 3, 4, 5, 6];
+const numbersEvenNumbers = prompt(
+  "Task 5, Enter array for find even numbers: "
+);
+filterEvenNumbers = (numbersEvenNumbers) => {
+  const arrayForStart = numbersEvenNumbers.split(" ");
+  const arrayEvenNumbers = [];
+  arrayForStart.forEach((element) => {
+    if (Number(element)) arrayEvenNumbers.push(Number(element));
+  });
+
   return arrayEvenNumbers.filter((element) => element % 2 !== 0);
 };
-console.log(`Task5: ${filterEvenNumbers(arrayEvenNumbers)}`);
+console.log(`Task5: ${filterEvenNumbers(numbersEvenNumbers)}`);
 
 //Task 6
-const arrayPositiveNumbers = [1, -2, 3, -4, -5, 6];
-countPositiveNumbers = (arrayPositiveNumbers) => {
-  return arrayPositiveNumbers.filter((element) => element > 0);
+// const arrayPositiveNumbers = [1, -2, 3, -4, -5, 6];
+const numbersPositiveNumbers = prompt(
+  "Task 6, Enter array to get count positive numbers: "
+);
+countPositiveNumbers = (numbersPositiveNumbers) => {
+  const arrayForStart = numbersPositiveNumbers.split(" ");
+  const arrayPositiveNumbers = [];
+  arrayForStart.forEach((element) => {
+    if (Number(element)) arrayPositiveNumbers.push(Number(element));
+  });
+  return arrayPositiveNumbers.filter((element) => element > 0).length;
 };
-console.log(`Task6: ${countPositiveNumbers(arrayPositiveNumbers)}`);
+console.log(`Task6: ${countPositiveNumbers(numbersPositiveNumbers)}`);
 
 //Task 7
-const arrayDividedByFive = [
-  6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2,
-];
-getDividedByFive = (arrayDividedByFive) => {
+// const arrayDividedByFive = [
+//   6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2,
+// ];
+const numbersDevidedByFive = prompt(
+  "Task 7, Enter array to for devided by 5: "
+);
+getDividedByFive = (numbersDevidedByFive) => {
+  const arrayForStart = numbersDevidedByFive.split(" ");
+  const arrayDividedByFive = [];
+  arrayForStart.forEach((element) => {
+    if (Number(element)) arrayDividedByFive.push(Number(element));
+  });
   return arrayDividedByFive.filter((element) => element % 5 == 0);
 };
-console.log(`Task7: ${getDividedByFive(arrayDividedByFive)}`);
+console.log(`Task7: ${getDividedByFive(numbersDevidedByFive)}`);
 
 //Task 8
-const stringForChange = prompt("Task 8, Enter a phrase: ");
+const stringForChange = prompt("Task 8, Enter a phrase with bad words: ");
 replaceBadWords = (stringForChange) => {
   const arrayBadWord = ["shit", "fuck"];
   const arrayForChange = stringForChange.split(" ");
@@ -126,7 +170,9 @@ replaceBadWords = (stringForChange) => {
 console.log(`Task8: ${replaceBadWords(stringForChange)}`);
 
 //Task 9
-const phraseIntoSyllables = prompt("Task 9, Enter a phrase: ");
+const phraseIntoSyllables = prompt(
+  "Task 9, Enter a phrase for devide into syllables: "
+);
 divideByThree = (phraseIntoSyllables) => {
   const arrayThreeSyllabels = [];
   const arrayIntoWord = phraseIntoSyllables.split(" ");
