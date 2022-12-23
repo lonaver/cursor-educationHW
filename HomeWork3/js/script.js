@@ -1,5 +1,5 @@
 //Task1
-const numberUser = prompt("Enter number:");
+const numberUser = prompt("Task1, Enter number:");
 getMaxDigit = (numberUser) => {
   let maxNumber = 0;
   for (i = 0; i < numberUser.length; i++) {
@@ -13,8 +13,8 @@ getMaxDigit = (numberUser) => {
 };
 
 // Task2
-const numberForPow = prompt("Enter number for pow:");
-const NumberPow = prompt("Enter number pow:");
+const numberForPow = prompt("Task2, Enter number for pow:");
+const NumberPow = prompt("Task2, Enter number pow:");
 numberInPow = (numberForPow, NumberPow) => {
   const needNumber = Number(numberForPow);
   const needNumberPow = Number(NumberPow);
@@ -34,7 +34,7 @@ numberInPow = (numberForPow, NumberPow) => {
 };
 
 // Task3
-const Name = prompt("Enter name:");
+const Name = prompt("Task3, Enter name:");
 CapitalLitter = (Name) => {
   if (typeof Name !== "string") return;
   const newName = Name.toLowerCase();
@@ -45,7 +45,7 @@ CapitalLitter = (Name) => {
 };
 
 // Task4
-const Salary = prompt("Enter salary:");
+const Salary = prompt("Task4, Enter salary:");
 
 getSalary = (Salary) => {
   let numberSalary = Number(Salary);
@@ -55,8 +55,8 @@ getSalary = (Salary) => {
 };
 
 // Task5
-const min = Number(prompt("Enter a min number: "));
-const max = Number(prompt("Enter a max number: "));
+const min = Number(prompt("Task5, Enter a min number: "));
+const max = Number(prompt("Task5, Enter a max number: "));
 
 randomNumber = (min, max) => {
   if (
@@ -71,8 +71,8 @@ randomNumber = (min, max) => {
 };
 
 // Task6
-const wordChangeUser = prompt("Enter a  word: ");
-const lettUser = prompt("Enter a letter: ");
+const wordChangeUser = prompt("Task6, Enter a  word: ");
+const lettUser = prompt("Task6, Enter a letter: ");
 countLetter = (lettUser, wordChangeUser) => {
   let count = 0;
   const lenString = wordChangeUser.length;
@@ -85,7 +85,7 @@ countLetter = (lettUser, wordChangeUser) => {
 };
 
 // Task7
-const sum = prompt("Enter a sum for change: ");
+const sum = prompt("Task7, Enter a sum for change: ");
 convertCurrency = (sum) => {
   const rate = 36;
   const SymbolDol = "$";
@@ -106,7 +106,7 @@ convertCurrency = (sum) => {
 };
 
 // Task8
-const lengthPassword = Number(prompt("Enter length password: ", 8));
+const lengthPassword = Number(prompt("Task8, Enter length password: ", 8));
 randomPassword = (lengthPassword) => {
   let password = "";
   lengthPassword = lengthPassword || 8;
@@ -119,8 +119,8 @@ randomPassword = (lengthPassword) => {
 };
 
 //Task9
-const wordDelUser = prompt("Enter a word for delete letter: ");
-const letUser = prompt("Enter a letter: ");
+const wordDelUser = prompt("Task9, Enter a word for delete letter: ");
+const letUser = prompt("Task9, Enter a letter: ");
 deleteLetter = (letUser, wordDelUser) => {
   const letUserUp = letUser.toUpperCase();
   const letUserLow = letUser.toLowerCase();
@@ -132,7 +132,7 @@ deleteLetter = (letUser, wordDelUser) => {
 };
 
 //Task10
-const needPhrase = prompt("Enter a phrase or a word: ");
+const needPhrase = prompt("Task10, Enter a phrase or a word: ");
 isPalyndrom = (needPhrase) => {
   let newString = "";
   const lenString = needPhrase.length - 1;
