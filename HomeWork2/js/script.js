@@ -10,10 +10,11 @@ do {
 } while (newNumber > newNumberAn);
 const needEven = confirm("Does it skip even numbers?");
 let sum = 0;
+// debugger;
 for (let i = newNumber; i <= newNumberAn; i++) {
-  if (needEven == true && i % 2 == 0) {
+  if (needEven == true && i % 2 !== 0) {
     sum += i;
-  } else if (needEven == false && i % 2 !== 0) {
+  } else if (needEven == false) {
     sum += i;
   }
 }

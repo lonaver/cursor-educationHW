@@ -1,9 +1,9 @@
 //Task1
 const numberUser = prompt("Enter number:");
-getMaxDigit = (number) => {
+getMaxDigit = (numberUser) => {
   let maxNumber = 0;
-  for (i = 0; i < number.length; i++) {
-    const numberFromArr = Number(number[i]);
+  for (i = 0; i < numberUser.length; i++) {
+    const numberFromArr = Number(numberUser[i]);
     if (typeof numberFromArr !== "number" || isNaN(numberFromArr)) continue;
     if (maxNumber < numberFromArr) {
       maxNumber = numberFromArr;
@@ -13,8 +13,8 @@ getMaxDigit = (number) => {
 };
 
 // Task2
-const numberFromUser = prompt("Enter number for pow:");
-const NumberForPow = prompt("Enter number pow:");
+const numberForPow = prompt("Enter number for pow:");
+const NumberPow = prompt("Enter number pow:");
 numberInPow = (numberForPow, NumberPow) => {
   const needNumber = Number(numberForPow);
   const needNumberPow = Number(NumberPow);
@@ -34,7 +34,7 @@ numberInPow = (numberForPow, NumberPow) => {
 };
 
 // Task3
-const UserName = prompt("Enter name:");
+const Name = prompt("Enter name:");
 CapitalLitter = (Name) => {
   if (typeof Name !== "string") return;
   const newName = Name.toLowerCase();
@@ -45,7 +45,7 @@ CapitalLitter = (Name) => {
 };
 
 // Task4
-const salaryUser = prompt("Enter salary:");
+const Salary = prompt("Enter salary:");
 
 getSalary = (Salary) => {
   let numberSalary = Number(Salary);
@@ -55,10 +55,10 @@ getSalary = (Salary) => {
 };
 
 // Task5
-const minNumber = Number(prompt("Enter a min number: "));
-const maxAnNumber = Number(prompt("Enter a max number: "));
+const min = Number(prompt("Enter a min number: "));
+const max = Number(prompt("Enter a max number: "));
 
-randomNumber = (max, min) => {
+randomNumber = (min, max) => {
   if (
     typeof max !== "number" ||
     isNaN(max) ||
@@ -71,8 +71,8 @@ randomNumber = (max, min) => {
 };
 
 // Task6
-const wordForChange = prompt("Enter a  word: ");
-const letter = prompt("Enter a letter: ");
+const wordChangeUser = prompt("Enter a  word: ");
+const lettUser = prompt("Enter a letter: ");
 countLetter = (lettUser, wordChangeUser) => {
   let count = 0;
   const lenString = wordChangeUser.length;
@@ -85,7 +85,7 @@ countLetter = (lettUser, wordChangeUser) => {
 };
 
 // Task7
-const sumChange = prompt("Enter a sum for change: ");
+const sum = prompt("Enter a sum for change: ");
 convertCurrency = (sum) => {
   const rate = 36;
   const SymbolDol = "$";
@@ -106,7 +106,7 @@ convertCurrency = (sum) => {
 };
 
 // Task8
-const lenPassword = Number(prompt("Enter length password: ", 8));
+const lengthPassword = Number(prompt("Enter length password: ", 8));
 randomPassword = (lengthPassword) => {
   let password = "";
   lengthPassword = lengthPassword || 8;
@@ -119,8 +119,8 @@ randomPassword = (lengthPassword) => {
 };
 
 //Task9
-const wordForDel = prompt("Enter a word for delete letter: ");
-const letterForDel = prompt("Enter a letter: ");
+const wordDelUser = prompt("Enter a word for delete letter: ");
+const letUser = prompt("Enter a letter: ");
 deleteLetter = (letUser, wordDelUser) => {
   const letUserUp = letUser.toUpperCase();
   const letUserLow = letUser.toLowerCase();
@@ -132,7 +132,7 @@ deleteLetter = (letUser, wordDelUser) => {
 };
 
 //Task10
-const phrase = prompt("Enter a phrase or a word: ");
+const needPhrase = prompt("Enter a phrase or a word: ");
 isPalyndrom = (needPhrase) => {
   let newString = "";
   const lenString = needPhrase.length - 1;
@@ -144,7 +144,7 @@ isPalyndrom = (needPhrase) => {
 };
 
 //Task11
-const word = prompt("Enter a word for delete repeted letter: ");
+const wordUser = prompt("Enter a word for delete repeted letter: ");
 deleteRepeteLetter = (wordUser) => {
   let lenString = wordUser.length;
   for (let i = lenString - 1; i >= 0; i--) {
@@ -167,13 +167,13 @@ deleteRepeteLetter = (wordUser) => {
 };
 
 console.log(`Task1: ${getMaxDigit(numberUser)}
-Task2: ${numberInPow(numberFromUser, NumberForPow)}
-Task3: ${CapitalLitter(UserName)}
-Task4: ${getSalary(salaryUser)}
-Task5: ${randomNumber(minNumber, maxAnNumber)}
-Task6: ${countLetter(letter, wordForChange)}
-Task7: ${convertCurrency(sumChange)}
-Task8: ${randomPassword(lenPassword)}
-Task9: ${deleteLetter(letterForDel, wordForDel)}
-Task10: ${isPalyndrom(phrase)}
-Task11: ${deleteRepeteLetter(word)}`);
+Task2: ${numberInPow(numberForPow, NumberPow)}
+Task3: ${CapitalLitter(Name)}
+Task4: ${getSalary(Salary)}
+Task5: ${randomNumber(min, max)}
+Task6: ${countLetter(lettUser, wordChangeUser)}
+Task7: ${convertCurrency(sum)}
+Task8: ${randomPassword(lengthPassword)}
+Task9: ${deleteLetter(letUser, wordDelUser)}
+Task10: ${isPalyndrom(needPhrase)}
+Task11: ${deleteRepeteLetter(wordUser)}`);
