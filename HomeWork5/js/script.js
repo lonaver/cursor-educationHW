@@ -64,7 +64,7 @@ getAverage = (numbersForAverage) => {
   });
 
   arrayForAverage.forEach((element) => {
-    if (Number.isInteger(element) && Number.isInteger(element)) {
+    if (Number.isInteger(element)) {
       sum += element;
       count++;
     }

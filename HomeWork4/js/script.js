@@ -18,11 +18,11 @@ GetArrayCouple = (students) => {
       arrayM.push(value);
     }
   }
-  const ArrayResultCouple = [];
+  const arrayResultCouple = [];
   for (let i = 0; i < arrayM.length; i++) {
-    ArrayResultCouple.push([arrayM[i], arrayF[i]]);
+    arrayResultCouple.push([arrayM[i], arrayF[i]]);
   }
-  return ArrayResultCouple;
+  return arrayResultCouple;
 };
 const arrayCommand = GetArrayCouple(students);
 
@@ -49,16 +49,16 @@ const arrayMarkForStudednts = MarksForStudents(students, marks);
 
 //get randon mark for student within 1-5 range
 GetMarksCommand = (arrayCommandWithTheme) => {
-  const CopyArray = JSON.parse(JSON.stringify(arrayCommandWithTheme));
+  const copyArray = JSON.parse(JSON.stringify(arrayCommandWithTheme));
   const max = 5;
   const min = 1;
   debugger;
-  for (let i = 0; i < CopyArray.length; i++) {
-    let RandomNumber = Math.random();
-    let randomMark = Math.floor((max - min) * RandomNumber + min);
-    CopyArray[i].push(randomMark);
+  for (let i = 0; i < copyArray.length; i++) {
+    let randomNumber = Math.random();
+    let randomMark = Math.floor((max - min) * randomNumber + min);
+    copyArray[i].push(randomMark);
   }
-  return CopyArray;
+  return copyArray;
 };
 const arrayCommandMark = GetMarksCommand(arrayCommandWithTheme);
 
