@@ -28,7 +28,7 @@ const students = [
   },
 ];
 let someStudent = students[0];
-getSubjects = (someStudent) => {
+let getSubjects = (someStudent) => {
   let subjectsForStudents = [];
   let nameSubject = "";
   for (let key in someStudent.subjects) {
@@ -45,7 +45,7 @@ getSubjects = (someStudent) => {
 console.log(getSubjects(someStudent));
 
 //Task 2
-getAverage = (arrayForStart = []) => {
+let getAverage = (arrayForStart = []) => {
   let avg;
   let sum = 0;
   let count = 0;
@@ -63,7 +63,7 @@ getAverage = (arrayForStart = []) => {
   return avg.toFixed(2);
 };
 
-getAverageMark = (someStudent) => {
+let getAverageMark = (someStudent) => {
   const arrayValues = Object.values(someStudent.subjects);
   const arrayValuesNew = arrayValues.reduce(
     (arrayValuesNew, val) => arrayValuesNew.concat(val),
@@ -76,7 +76,7 @@ getAverageMark = (someStudent) => {
 console.log(getAverageMark(someStudent));
 
 //Task 3
-getStudentInfo = (someStudent) => {
+let getStudentInfo = (someStudent) => {
   const infoAboutStudent = {
     name: someStudent.name,
     course: someStudent.course,
@@ -86,7 +86,7 @@ getStudentInfo = (someStudent) => {
 };
 console.log(getStudentInfo(someStudent));
 //Task4
-getStudentsNames = (students) => {
+let getStudentsNames = (students) => {
   const arrayNames = [];
   students.forEach((element) => {
     arrayNames.push(element.name);
@@ -96,7 +96,7 @@ getStudentsNames = (students) => {
 console.log(getStudentsNames(students));
 
 //Task 5
-getBestStudent = (students) => {
+let getBestStudent = (students) => {
   let bestStudent = "";
   let maxMark = 0;
   students.forEach((someStudent) => {
@@ -112,8 +112,7 @@ getBestStudent = (students) => {
 console.log(getBestStudent(students));
 
 //Task 6
-debugger;
-calculateWordLetters = (wordTest = "тест") => {
+let calculateWordLetters = (wordTest = "тест") => {
   let wordObject = {};
   //   let count = 0;
   const arrayWord = wordTest.split("");

@@ -3,7 +3,7 @@ const lengthArray = Number(prompt("Task 1: Enter a length array: "));
 const minNumber = Number(prompt("Task 1: Enter a min number: "));
 const maxNumber = Number(prompt("Task 1: Enter a max number: "));
 
-getRandomArray = (length, min, max) => {
+let getRandomArray = (length, min, max) => {
   const arrayRandom = [];
   if (
     typeof max !== "number" ||
@@ -25,7 +25,7 @@ console.log(`Task1: ${getRandomArray(lengthArray, minNumber, maxNumber)}`);
 //const arrayModa = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 // const arrayModa = [1.1, 2, 1.1];
 const arrayModaStr = prompt("Task 2: Enter array for Moda: ");
-getModa = (arrayModaStr) => {
+let getModa = (arrayModaStr) => {
   const arrayForStart = arrayModaStr.split(" ");
   const arrayCouple = [];
   const arrayModa = [];
@@ -53,7 +53,7 @@ console.log(`Task2 : ${getModa(arrayModaStr)}`);
 const numbersForAverage = prompt("Task 3: Enter array for avarege: ");
 // const arrayForAverage = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 // const arrayForAverage = [1.1, 2.2, 1.1];
-getAverage = (numbersForAverage) => {
+let getAverage = (numbersForAverage) => {
   const arrayForStart = numbersForAverage.split(" ");
   let avg;
   let sum = 0;
@@ -82,7 +82,7 @@ console.log(`Task3: ${getAverage(numbersForAverage)}`);
 // const arrayForMedian = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 const numbersForMedian = prompt("Task 4: Enter array for median: ");
 
-getMedian = (numbersForMedian) => {
+let getMedian = (numbersForMedian) => {
   const arrayForStart = numbersForMedian.split(" ");
   let median;
   const arrayForMedian = [];
@@ -108,7 +108,7 @@ console.log(`Task4: ${getMedian(numbersForMedian)}`);
 const numbersEvenNumbers = prompt(
   "Task 5, Enter array for find even numbers: "
 );
-filterEvenNumbers = (numbersEvenNumbers) => {
+let filterEvenNumbers = (numbersEvenNumbers) => {
   const arrayForStart = numbersEvenNumbers.split(" ");
   const arrayEvenNumbers = [];
   arrayForStart.forEach((element) => {
@@ -124,7 +124,7 @@ console.log(`Task5: ${filterEvenNumbers(numbersEvenNumbers)}`);
 const numbersPositiveNumbers = prompt(
   "Task 6, Enter array to get count positive numbers: "
 );
-countPositiveNumbers = (numbersPositiveNumbers) => {
+let countPositiveNumbers = (numbersPositiveNumbers) => {
   const arrayForStart = numbersPositiveNumbers.split(" ");
   const arrayPositiveNumbers = [];
   arrayForStart.forEach((element) => {
@@ -141,7 +141,7 @@ console.log(`Task6: ${countPositiveNumbers(numbersPositiveNumbers)}`);
 const numbersDevidedByFive = prompt(
   "Task 7, Enter array to for devided by 5: "
 );
-getDividedByFive = (numbersDevidedByFive) => {
+let getDividedByFive = (numbersDevidedByFive) => {
   const arrayForStart = numbersDevidedByFive.split(" ");
   const arrayDividedByFive = [];
   arrayForStart.forEach((element) => {
@@ -153,7 +153,7 @@ console.log(`Task7: ${getDividedByFive(numbersDevidedByFive)}`);
 
 //Task 8
 const stringForChange = prompt("Task 8, Enter a phrase with bad words: ");
-replaceBadWords = (stringForChange) => {
+let replaceBadWords = (stringForChange) => {
   const arrayBadWord = ["shit", "fuck"];
   const arrayForChange = stringForChange.split(" ");
   let string = "";
@@ -173,7 +173,7 @@ console.log(`Task8: ${replaceBadWords(stringForChange)}`);
 const phraseIntoSyllables = prompt(
   "Task 9, Enter a phrase for devide into syllables: "
 );
-divideByThree = (phraseIntoSyllables) => {
+let divideByThree = (phraseIntoSyllables) => {
   const arrayThreeSyllabels = [];
   const arrayIntoWord = phraseIntoSyllables.split(" ");
   let newItem = "";
@@ -202,7 +202,7 @@ const wordForCombo = prompt(
   "Task 10, Enter a word for random combination, max length 10: "
 );
 
-generateCombinations = (wordForCombo) => {
+let generateCombinations = (wordForCombo) => {
   const arrayIntoWord = wordForCombo.split("");
 
   const newArrayRandom = [];
