@@ -1,7 +1,6 @@
 let isButtonPressed = false;
 let arrayKeys = document.getElementsByClassName("key");
 const colorPushBtn = "rgb(70, 212, 26)";
-const colorBtn = "rgba(0, 0, 0, 0.4)";
 
 document.addEventListener("keydown", (e) => {
   let soundDiv;
@@ -15,7 +14,7 @@ document.addEventListener("keydown", (e) => {
 
   for (const arrayKey of arrayKeys) {
     arrayKey.getAttribute("style");
-    arrayKey.style.backgroundColor = colorBtn;
+    arrayKey.style.backgroundColor = "";
   }
   soundDiv.getAttribute("style");
   soundDiv.style.backgroundColor = colorPushBtn;
@@ -24,11 +23,12 @@ document.addEventListener("keydown", (e) => {
 
 function pushButton(buttonEvents) {
   for (const buttonEvent of buttonEvents)
-    buttonEvent.addEventListener("click", function () {
+    buttonEvent.addEventListener("click", function (event) {
       for (const btn of buttonEvents) {
         btn.getAttribute("style");
-        btn.style.backgroundColor = colorBtn;
+        btn.style.backgroundColor = "";
       }
+
       switch (buttonEvent.id) {
         case "87":
           document.getElementById("KeyQ").play();
