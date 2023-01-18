@@ -1,13 +1,18 @@
 body {
-  background-color: rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.03em;
+
+  background: url("../images/jungle-cartoon-background-free-vector.jpg") bottom
+    center;
+  background-size: cover;
 }
 .keys {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
+
   gap: 30px;
 }
 .key {
@@ -17,13 +22,13 @@ body {
   line-height: 1.36;
   padding: 10px 5px 10px;
   transition: all 0.07s ease;
-  width: 200px;
+  width: 120px;
   text-align: center;
   color: white;
   background: rgba(0, 0, 0, 0.4);
 }
 .sound {
   color: rgb(12, 36, 116);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.19;
 }
