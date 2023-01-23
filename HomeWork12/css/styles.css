@@ -1,0 +1,247 @@
+:root {
+  /* Fonts */
+  --main-font: "Open Sans", sans-serif;
+  --secondary-font: "Raleway", sans-serif;
+
+  /* Text colors */
+  --main-txt-cl: #303030;
+  --accent-txt-cl: #ff6c00;
+  --light-txt-cl: #ffffff;
+  --dark-txt-cl: #555555;
+
+  --grey-cl: rgb(157, 164, 189);
+  --grey-cl-60: rgba(157, 164, 189, 0.6);
+
+  /* BG colors */
+  --dark-bg-cl: #191c26;
+  --accent-bg-cl: #ff6c00;
+
+  /* Others */
+  --btn-radius: 25px;
+  --indent: 30px;
+  --items: 3;
+  --header-idx: 10;
+  --modal-idx: 100;
+  --menu-idx: 1000;
+
+  --anim-fast: 300ms ease-out;
+  --anim-slow: 800ms ease;
+}
+
+body {
+  font-family: var(--main-font);
+  /* color: var(--main-txt-cl); */
+  color: var(--light-txt-cl);
+  font-size: 18px;
+  line-height: calc(30 / 18);
+  letter-spacing: 0.02em;
+
+  background-color: rgb(85, 85, 85, 0.4);
+}
+
+/* reset start */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+/* reset end */
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--header-idx);
+
+  width: 100%;
+
+  transition: background-color var(--anim-slow),
+    backdrop-filter var(--anim-slow);
+  background-color: var(--grey-cl-60);
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-area {
+  margin-left: 30px;
+}
+input {
+  padding-left: 20px;
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+}
+
+.input_field ~ input::placeholder {
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+.input_field ~ input:focus {
+  outline-style: inherit;
+}
+
+.btn {
+  width: 160px;
+  height: 40px;
+  padding: 0px;
+
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--light-txt-cl);
+
+  background-color: transparent;
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+  cursor: pointer;
+
+  transition-property: color, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+
+  transition: color var(--anim-fast), background-color var(--anim-fast);
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--light-txt-cl);
+  background-color: var(--accent-bg-cl);
+}
+.btn_planets,
+.btn_main {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+}
+.btn_wookie {
+  width: 40px;
+  height: 40px;
+
+  padding: 0px;
+  margin-right: 30px;
+
+  border: 5px solid #ff6c00;
+  border-radius: 50%;
+}
+.btn_wookie_planet {
+  margin-right: 0px;
+}
+/* div Wrapper cards person from film 2 */
+
+.hero {
+  padding-top: 100px;
+}
+.hero_bcg {
+  background-image: linear-gradient(
+      rgba(157, 164, 189, 0.8) 0%,
+      rgba(157, 164, 189, 0.2) 100%
+    ),
+    url(../image/bcg_starwars.jpg);
+  /* background-image: linear-gradient(
+    rgba(85, 85, 85, 0.8) 0%,
+    rgba(85, 85, 85, 0.2) 100%
+  );*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.title {
+  margin-bottom: 20px;
+
+  font-family: var(--secondary-font);
+  font-size: 72px;
+  line-height: calc(85 / 72);
+  letter-spacing: 0.05em;
+  color: var(--accent-bg-cl);
+
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  background-color: var(--grey-cl-60);
+}
+.cards_item {
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-basis: calc(
+    (100% - var(--indent) * (var(--items) - 1)) / (var(--items))
+  );
+  border-radius: 4px;
+  background-image: linear-gradient(
+    180deg,
+    rgb(64, 65, 71) 0%,
+    rgba(64, 65, 71, 0.2) 100%
+  );
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.person_name,
+.planet_name {
+  margin-bottom: 20px;
+
+  font-family: var(--secondary-font);
+  font-size: 42px;
+  line-height: calc(49 / 42);
+  letter-spacing: 0.05em;
+}
+.socials_icon {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
