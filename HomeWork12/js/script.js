@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function RenderPerson(people) {
   const divCards = document.querySelectorAll(".cards_item");
-
+  hero.classList.remove("start_hero");
   for (let divCard of divCards) {
     if (divCard) divCard.remove();
   }
@@ -57,21 +57,24 @@ function RenderPerson(people) {
     personGender.classList.add("person_gender");
     personGender.textContent =
       (isWookie ? "acraahrc_oaooanoorc: " : "gender: ") + gender;
-    //Не бачить svg
-    // const svgElem = document.createElementNS("./image/man.svg", "svg");
-    // svgElem.classList.add("socials_icon");
-    // svgElem.setAttributeNS(null, "width", "32");
-    // svgElem.setAttributeNS(null, "height", "32");
-    // svgElem.setAttributeNS(null, "viewBox", "0 0 32 32");
-    // const useElem = document.createElementNS("./image/man.svg", "use");
-    // useElem.setAttributeNS(null, "href", "./image/man.svg");
-
-    // svgElem.append(useElem);
-
+    if (!isWookie) {
+      switch (gender) {
+        case "male": {
+          personGender.classList.add("person_man");
+          break;
+        }
+        case "female": {
+          personGender.classList.add("person_women");
+          break;
+        }
+        default: {
+          personGender.classList.add("person_na");
+        }
+      }
+    }
     personWrapper.append(personName);
     personWrapper.append(personBirth);
     personWrapper.append(personGender);
-    // personWrapper.append(svgElem);
 
     wrapper.append(personWrapper);
   }
@@ -103,6 +106,10 @@ async function getFilms(numEpisode) {
   }
   if (arrayPeople.length > 0) RenderPerson(arrayPeople);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  hero.classList.add("start_hero");
+});
 
 buttonInfo.addEventListener("click", () => {
   getFilms(2);

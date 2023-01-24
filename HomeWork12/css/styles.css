@@ -180,6 +180,20 @@ input {
   margin-right: 0px;
 }
 /* div Wrapper cards person from film 2 */
+.start_hero {
+  height: 100vh;
+  width: 100%;
+
+  background-image: linear-gradient(
+      rgba(157, 164, 189, 0.8) 0%,
+      rgba(157, 164, 189, 0.2) 100%
+    ),
+    url(../image/bcg_start.jpg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .hero {
   padding-top: 100px;
@@ -190,10 +204,7 @@ input {
       rgba(157, 164, 189, 0.2) 100%
     ),
     url(../image/bcg_starwars.jpg);
-  /* background-image: linear-gradient(
-    rgba(85, 85, 85, 0.8) 0%,
-    rgba(85, 85, 85, 0.2) 100%
-  );*/
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -234,14 +245,33 @@ input {
 .person_name,
 .planet_name {
   margin-bottom: 20px;
-
+  display: inline-block;
   font-family: var(--secondary-font);
   font-size: 42px;
   line-height: calc(49 / 42);
   letter-spacing: 0.05em;
 }
-.socials_icon {
-  width: 32px;
-  height: 32px;
-  fill: currentColor;
+.person_man::after {
+  content: url("../image/man.svg");
+
+  display: inline-block;
+  margin-left: 10px;
+
+  fill: var(--accent-bg-cl);
+}
+.person_women::after {
+  content: url("../image/woman.svg");
+
+  display: inline-block;
+  margin-left: 10px;
+
+  fill: var(--dark-txt-cl);
+}
+.person_na::after {
+  content: url("../image/android.svg");
+
+  display: inline-block;
+  margin-left: 10px;
+
+  fill: var(--dark-txt-cl);
 }
