@@ -209,7 +209,8 @@ input {
   background-position: center;
   background-size: cover;
 }
-.title {
+.title,
+.title_episode {
   margin-bottom: 20px;
 
   font-family: var(--secondary-font);

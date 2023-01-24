@@ -5,6 +5,7 @@ const buttonWuki = document.querySelector(".btn_wookie");
 
 const inputEpisode = document.querySelector("#input_episode");
 const hero = document.querySelector(".hero");
+const titleEpisode = document.querySelector(".title_episode");
 
 //planets
 const buttonPlanets = document.querySelector(".btn_planets");
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonWuki.textContent = isWookie ? "Woo" : "Eng";
 });
 
-function RenderPerson(people) {
+function RenderPerson(people, numberFilm) {
   const divCards = document.querySelectorAll(".cards_item");
   hero.classList.remove("start_hero");
   for (let divCard of divCards) {
@@ -72,6 +73,7 @@ function RenderPerson(people) {
         }
       }
     }
+    titleEpisode.textContent = `Episode ${episodes[numberFilm - 1]}`;
     personWrapper.append(personName);
     personWrapper.append(personBirth);
     personWrapper.append(personGender);
@@ -104,7 +106,7 @@ async function getFilms(numEpisode) {
       arrayPeople.push(person);
     }
   }
-  if (arrayPeople.length > 0) RenderPerson(arrayPeople);
+  if (arrayPeople.length > 0) RenderPerson(arrayPeople, numEpisode);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
