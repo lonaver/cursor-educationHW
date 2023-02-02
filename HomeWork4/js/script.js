@@ -52,7 +52,6 @@ GetMarksCommand = (arrayCommandWithTheme) => {
   const copyArray = JSON.parse(JSON.stringify(arrayCommandWithTheme));
   const max = 5;
   const min = 1;
-  debugger;
   for (let i = 0; i < copyArray.length; i++) {
     let randomNumber = Math.random();
     let randomMark = Math.floor((max - min) * randomNumber + min);
