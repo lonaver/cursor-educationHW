@@ -1,43 +1,22 @@
 const path = require("path");
-
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
+  entry: {
+    app: "./src/index.js",
+  },
   output: {
-    filename: "./output.js",
+    path: path.resolve(__dirname, "dev"),
+    filename: "index_bundle.js",
   },
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 9000,
-    watchContentBase: true,
-    progress: true,
-  },
-
+  mode: "development",
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader",
+        test: /\.js$/,
+        include: path.resolve(__dirname, "src"),
+        loader: "babel-loader",
+        query: {
+          presets: ["env"],
         },
-      },
-      {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
       },
     ],
   },
