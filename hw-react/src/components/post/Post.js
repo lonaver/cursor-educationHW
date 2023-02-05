@@ -41,7 +41,7 @@ const Post = ({
             ></textarea>
           </div>
           <button type="button" className="btn">
-            WAW!
+            WOW!
           </button>
         </form>
       </div>
