@@ -17,7 +17,7 @@ function App() {
   const YODA_IMAGE =
     "https://www.fototapete.de/media/catalog/product/1/4/14721_star_wars_yoda_ma_1.jpg";
   const YODA_POST =
-    "https://www.creativefabrica.com/wp-content/uploads/2022/10/26/Baby-Yoda-By-Greg-Rutkowski-Weta-Digital-43401561-1.png";
+    "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/12/20/Pictures/_0745b0ec-231b-11ea-8c10-7db3e225203f.jpg";
   const CHUBAKA_IMAGE =
     "https://i.pinimg.com/originals/46/0e/13/460e132071327f5c7f2000f909f0b9f1.jpg";
   const CHUBAKA_POST =
