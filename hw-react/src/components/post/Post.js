@@ -16,7 +16,7 @@ const Post = ({
     <div className={`post ${theme}`}>
       <div className="post_header">
         <div className="thumb_photo">
-          <img src={author.photoNick} alt="photo author"></img>
+          <img src={author.photoNick} alt="card author"></img>
         </div>
         <p className="header_name">{author.name}</p>
 
@@ -25,7 +25,7 @@ const Post = ({
       <h4 className="post_title">{content}</h4>
       <div className="block">
         <div className="post_image">
-          <img src={imagePost} alt="image context"></img>
+          <img src={imagePost} alt="card context"></img>
         </div>
 
         <form name="form_chat" class="form_chat">
@@ -46,13 +46,13 @@ const Post = ({
         </form>
       </div>
       <div className="wrapper">
-        <a className="wrapper_link comment" href="#">
+        <a className="wrapper_link comment" href="">
           {countComment}
         </a>
-        <a className="wrapper_link look" href="#">
+        <a className="wrapper_link look" href="">
           {countLook}
         </a>
-        <a className="wrapper_link likes" href="#">
+        <a className="wrapper_link likes" href="">
           {countLikes}
         </a>
         <a className="wrapper_link download" href="#">
