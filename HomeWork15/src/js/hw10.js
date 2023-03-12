@@ -31,15 +31,32 @@ export function pushButton(buttonEvents) {
 
       switch (buttonEvent.id) {
         case "87":
-          document.getElementById("KeyQ").play();
+          const wavFile = document.getElementById("KeyQ");
+          wavFile.setAttribute(
+            "src",
+            require("../sound/mixkit-fish-flapping-2457.wav")
+          );
+          wavFile.play();
           buttonEvent.style.backgroundColor = colorPushBtn;
           break;
         case "81":
-          document.getElementById("KeyW").play();
+          const wavW = document.getElementById("KeyW");
+          wavW.setAttribute(
+            "src",
+            require("../sound/mixkit-cartoon-monkey-laugh-100.wav")
+          );
+          wavW.play();
+
           buttonEvent.style.backgroundColor = colorPushBtn;
           break;
         case "69":
-          document.getElementById("KeyE").play();
+          const wavE = document.getElementById("KeyE");
+          wavE.setAttribute(
+            "src",
+            require("../sound/mixkit-cockatoo-bird-squawk-2437.wav")
+          );
+          wavE.play();
+
           buttonEvent.style.backgroundColor = colorPushBtn;
           break;
       }

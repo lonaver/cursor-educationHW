@@ -11,6 +11,8 @@ import { arrayKeys, pushButton } from "./js/hw10";
 import { getRandomChinese } from "./js/hw11";
 import newFontGenerator from "./js/hw13";
 
+import "./css/styles.css";
+
 document.querySelector(
   ".HW1"
 ).textContent = `HOMEWORK1 TASK1: priceCandle = 15.678; priceLamp = 123.965; priceGlass = 90.2345; Maxprice=${max}`;
