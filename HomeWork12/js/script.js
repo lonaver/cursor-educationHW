@@ -2,11 +2,12 @@ const wrapper = document.querySelector(".wrapper_person");
 const buttonInfo = document.querySelector(".btn_info");
 const buttonInfoEpisode = document.querySelector(".btn_info_episode");
 const buttonWuki = document.querySelector(".btn_wookie");
+const loaderEl = document.querySelector(".loader");
 
 const inputEpisode = document.querySelector("#input_episode");
 const hero = document.querySelector(".hero");
 const titleEpisode = document.querySelector(".title_episode");
-
+const divCards = document.querySelectorAll(".cards_item");
 //planets
 const buttonPlanets = document.querySelector(".btn_planets");
 // const queryPlanets = "/planets";
@@ -21,13 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonWuki.textContent = isWookie ? "Woo" : "Eng";
 });
 
-function RenderPerson(people, numberFilm) {
-  const divCards = document.querySelectorAll(".cards_item");
-  hero.classList.remove("start_hero");
-  for (let divCard of divCards) {
-    if (divCard) divCard.remove();
-  }
+function removeRenderCard() {
+  wrapper.innerHTML = "";
+}
 
+function pageCards() {
+  removeRenderCard();
+}
+
+function startPage() {
+  removeRenderCard();
+  hero.classList.replace("hero_bcg", "start_hero");
+}
+
+function RenderPerson(people, numberFilm) {
+  loaderEl.classList.replace("position", "ishidden");
+  pageCards();
   for (const person of people) {
     let name = "";
     let birth_year = "";
@@ -80,13 +90,16 @@ function RenderPerson(people, numberFilm) {
 
     wrapper.append(personWrapper);
   }
-  hero.classList.add("hero_bcg");
+  hero.classList.replace("start_hero", "hero_bcg");
 }
 
 async function getFilms(numEpisode) {
   const wookieeStr = isWookie ? "?format=wookiee" : "";
+  loaderEl.classList.replace("ishidden", "position");
+
   const request = await fetch(`${BASE_URL}${queryFilms}${numEpisode}`);
   const films = await request.json();
+
   const arrayPeople = [];
 
   console.log({ films });
@@ -96,14 +109,13 @@ async function getFilms(numEpisode) {
 
     try {
       requestPeople = await fetch(`${characterURL}${wookieeStr}`);
+      const person = await requestPeople.json();
+      arrayPeople.push(person);
+      console.log({ person });
     } catch (e) {
       console.log(e);
     } finally {
-      const person = await requestPeople.json();
-
-      console.log({ person });
-
-      arrayPeople.push(person);
+      // loaderEl.classList.replace("position", "ishidden");
     }
   }
   if (arrayPeople.length > 0) RenderPerson(arrayPeople, numEpisode);
@@ -114,11 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 buttonInfo.addEventListener("click", () => {
+  startPage();
   getFilms(2);
 });
 
 buttonInfoEpisode.addEventListener("click", () => {
+  startPage();
   let valueEpisode = Number(inputEpisode.value);
+
   numberFilm = episodes.indexOf(valueEpisode);
   if (numberFilm === -1) return alert("There isn`t this episode!");
   getFilms(numberFilm + 1);
@@ -130,6 +145,7 @@ buttonWuki.addEventListener("click", () => {
 });
 
 buttonPlanets.addEventListener("click", () => {
+  startPage();
   let wookieeQuery = isWookie ? "?format=wookiee" : "";
   if (location.href.includes("index.html")) {
     location.href = location.href.replace(

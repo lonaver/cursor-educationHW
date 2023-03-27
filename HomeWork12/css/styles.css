@@ -67,6 +67,10 @@ img {
   height: auto;
 }
 
+.ishidden {
+  display: none;
+}
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -113,12 +117,13 @@ img {
 }
 input {
   padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: 1px solid #ff6c00;
   border-radius: 25px;
 }
 
 .input_field ~ input::placeholder {
-  padding-left: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
@@ -194,7 +199,16 @@ input {
   background-position: center;
   background-size: cover;
 }
-
+.hero_planet {
+  background-image: linear-gradient(
+      rgba(157, 164, 189, 0.8) 0%,
+      rgba(157, 164, 189, 0.2) 100%
+    ),
+    url(https://cdn.wallpapersafari.com/70/71/9dCwjb.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .hero {
   padding-top: 100px;
 }
@@ -225,7 +239,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  background-color: var(--grey-cl-60);
+  /* background-color: var(--grey-cl-60); */
 }
 .cards_item {
   padding-left: 10px;
@@ -275,4 +289,58 @@ input {
   margin-left: 10px;
 
   fill: var(--dark-txt-cl);
+}
+/* spinner */
+.position {
+  display: inline-block;
+  margin-left: calc(1200px / 2 - 10px);
+  margin-top: 100px;
+  padding: 0px;
+}
+.loader {
+  font-size: 48px;
+  color: #fff;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  background-color: currentcolor;
+  position: relative;
+  border-radius: 50%;
+  transform: rotateX(-60deg) perspective(1000px);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  animation: flowerFlow 1s ease-out infinite;
+}
+.loader:after {
+  animation-delay: 0.4s;
+}
+
+@keyframes flowerFlow {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+    box-shadow: 0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(180deg);
+    box-shadow: -1em -1em 0 -0.35em currentcolor,
+      0 -1.5em 0 -0.35em currentcolor, 1em -1em 0 -0.35em currentcolor,
+      -1.5em 0 0 -0.35em currentcolor, 1.5em -0 0 -0.35em currentcolor,
+      -1em 1em 0 -0.35em currentcolor, 0 1.5em 0 -0.35em currentcolor,
+      1em 1em 0 -0.35em currentcolor;
+  }
 }
